@@ -1,0 +1,20 @@
+{
+  "name": "4.csv-puppeteer-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parse": "^5.0.4",
+    "csv-stringify": "^6.0.5",
+    "i": "^0.3.7",
+    "npm": "^8.5.0",
+    "pupeteer": "^0.0.1",
+    "puppeteer": "^13.3.2"
+  }
+}
