@@ -1,0 +1,16 @@
+{
+  "name": "5.infinity-scroll-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "puppeteer": "^13.3.2"
+  }
+}
