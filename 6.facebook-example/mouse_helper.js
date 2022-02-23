@@ -1,11 +1,3 @@
-# Node JS 크롤링
-
-## 사람처럼 인식시키기 위한 TIP
-
-1. page.type or page.click 을 사용하지 않고, 마우스를 수동으로 이동하고, 키보드를 수동으로 한글자씩 적어서 사람인척한다.
-2. page.mouse.click, page.mouse.down. page.mouse.up, page.keyboard.press, page.keyboard.down, page.keyboard.up
-
-```js
 // 크롤링시 마우스 움직임을 눈으로 확인 할 수 있는 스크립트
 // 원하는 곳에서 복사해서 사용!
 
@@ -68,12 +60,3 @@ function updateButtons(buttons) {
   for (let i = 0; i < 5; i++)
     box.classList.toggle('button-' + i, !!(buttons & (1 << i)));
 }
-```
-
-```js
-// alert 처리
-page.on('dialog', async (dialog) => {
-  console.log(dialog.type(), dialog.message());
-  await dialog.accept(); // accept는 confirm의 확인, dismiss는 취소
-});
-```
