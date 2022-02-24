@@ -77,3 +77,33 @@ page.on('dialog', async (dialog) => {
   await dialog.accept(); // accept는 confirm의 확인, dismiss는 취소
 });
 ```
+
+3. await page.waitForNavigation(): 페이지전환을 기다린다.
+4. userDataDir: 유저 데이터를 설정(로그인 유지 가능)
+
+```js
+puppeteer.launch({
+  userDataDir: './myUserDataDir',
+})
+```
+
+5. chromium version 변경
+
+```js
+    const browser_fetcher = puppeteer.createBrowserFetcher();
+    const revision_info = await browser_fetcher.download(737173);
+
+    let browser = await puppeteer.launch({
+      headless: BROWSER_HEAD,
+      executablePath: revision_info.executablePath,
+      args: [`--window-size=${BROWSER_WIDTH},${BROWSER_HEIGHT}`, '--disable-notifications'],
+    });
+```
+
+6. 버전확인은 history 사이트를 이용 or check_availability.js 를 이용하여 체크!
+> 버전 history: https://vikyd.github.io/download-chromium-history-version/#/
+
+7. 모든 스크립트가 완료되어야 크롤링이 가능할 경우 waitUntil 옵션을 사용 (단, youtube 와 같은 동영상로드가 지속적으로 이루어지는 사이트에서는 사용 X)
+```js
+  page.goto(url, waitUntil: 'networkidle0');
+```
